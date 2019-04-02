@@ -46,16 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManagerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManagerInfo.Designer.cs">
       <DependentUpon>FormManagerInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemberInfo.Designer.cs">
+      <DependentUpon>FormMemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMemberTypeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemberTypeInfo.Designer.cs">
+      <DependentUpon>FormMemberTypeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManagerInfo.resx">
       <DependentUpon>FormManagerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMemberInfo.resx">
+      <DependentUpon>FormMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMemberTypeInfo.resx">
+      <DependentUpon>FormMemberTypeInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +123,10 @@
     <ProjectReference Include="..\CaterCommon\CaterCommon.csproj">
       <Project>{4f425496-9354-4c20-9c4c-41d6778990cc}</Project>
       <Name>CaterCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaterDal\CaterDal.csproj">
+      <Project>{9120A8A7-9A89-479C-A5F0-AFD11FA68F13}</Project>
+      <Name>CaterDal</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaterModel\CaterModel.csproj">
       <Project>{3da54c58-29f2-45a4-9c1c-2bec055ce094}</Project>

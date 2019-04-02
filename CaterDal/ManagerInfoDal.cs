@@ -90,6 +90,33 @@ namespace CaterDal
         {
             string sqlText = "update ManagerInfo set MDelFlag = 1 where MId = @MId";
             return SqlHelper.ExecuteNonQuery(connStr, sqlText, new SqlParameter("@MId", mId));
+        }
+        #endregion
+
+        #region 由姓名查询信息
+        /// <summary>
+        /// 由姓名查询信息
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public ManagerInfo GetByName(string name)
+        {
+            ManagerInfo mi = null;
+            string sqlText = "select MId, MName, MPwd, MType from ManagerInfo where MName = @MName and MDelFlag = 0";
+            SqlParameter para = new SqlParameter("@MName", name);
+            SqlDataReader reader = SqlHelper.ExecuteReader(connStr, sqlText, para);
+            reader.Read();
+            if (reader.HasRows)
+            {
+                mi = new ManagerInfo()
+                {
+                    MId = ToInt32(reader["MId"]),
+                    MName = reader["MName"].ToString(),
+                    MPwd = reader["MPwd"].ToString(),
+                    MType = ToInt32(reader["MType"])
+                };
+            }
+            return mi;
         } 
         #endregion
     }

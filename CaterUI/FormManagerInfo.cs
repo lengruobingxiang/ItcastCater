@@ -16,9 +16,20 @@ namespace CaterUI
 {
     public partial class FormManagerInfo : Form
     {
-        public FormManagerInfo()
+        private FormManagerInfo()
         {
             InitializeComponent();
+        }
+
+        // 实现窗体单例
+        private static FormManagerInfo _form;
+        public static FormManagerInfo Create()
+        {
+            if (_form == null)
+            {
+                _form = new FormManagerInfo();
+            }
+            return _form;
         }
 
         // 创建业务逻辑层对象
@@ -128,6 +139,12 @@ namespace CaterUI
             {
                 MessageBox.Show("请先选择要删除的行！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // 窗体关闭后，重置_form变量
+        private void FormManagerInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _form = null;
         }
     }
 }

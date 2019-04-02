@@ -59,7 +59,7 @@
             this.groupBox1.Controls.Add(this.dgvManagerInfoList);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 262);
+            this.groupBox1.Size = new System.Drawing.Size(350, 262);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "列表";
@@ -80,7 +80,7 @@
             this.dgvManagerInfoList.ReadOnly = true;
             this.dgvManagerInfoList.RowTemplate.Height = 23;
             this.dgvManagerInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManagerInfoList.Size = new System.Drawing.Size(364, 242);
+            this.dgvManagerInfoList.Size = new System.Drawing.Size(344, 242);
             this.dgvManagerInfoList.TabIndex = 0;
             this.dgvManagerInfoList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagerInfoList_CellDoubleClick);
             this.dgvManagerInfoList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvManagerInfoList_CellFormatting);
@@ -108,8 +108,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnDel);
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnAdd);
@@ -122,7 +121,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(388, 12);
+            this.groupBox2.Location = new System.Drawing.Point(368, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 262);
             this.groupBox2.TabIndex = 1;
@@ -244,12 +243,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 286);
+            this.ClientSize = new System.Drawing.Size(574, 286);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(16, 325);
             this.Name = "FormManagerInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "店员管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManagerInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormManagerInfo_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManagerInfoList)).EndInit();

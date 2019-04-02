@@ -1,4 +1,5 @@
-﻿using CaterDal;
+﻿using CaterCommon;
+using CaterDal;
 using CaterModel;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,25 @@ namespace CaterBll
         public bool Remove(int id)
         {
             return mIDal.Delete(id) > 0;
+        }
+
+        public LoginState Login(string name, string pwd, out ManagerInfo mi)
+        {
+            LoginState state;
+            mi = mIDal.GetByName(name);
+            if (mi == null)
+            {
+                state = LoginState.NameError;
+            }
+            else if (Md5Helper.EncryptString(pwd) == mi.MPwd)
+            {
+                state = LoginState.OK;
+            }
+            else
+            {
+                state = LoginState.PwdError;
+            }
+            return state;
         }
     }
 }
