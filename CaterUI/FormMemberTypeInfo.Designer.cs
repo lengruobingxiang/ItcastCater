@@ -65,6 +65,7 @@
             // 
             this.dgvMemberTypeInfo.AllowUserToAddRows = false;
             this.dgvMemberTypeInfo.AllowUserToDeleteRows = false;
+            this.dgvMemberTypeInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMemberTypeInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMemberTypeInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MTId,
