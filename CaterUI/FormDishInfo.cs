@@ -16,12 +16,13 @@ namespace CaterUI
 {
     public partial class FormDishInfo : Form
     {
-        public FormDishInfo()
+        private FormDishInfo()
         {
             InitializeComponent();
         }
 
         DishInfoBll diBll = new DishInfoBll();
+        static FormDishInfo _form = null;
 
         private void FormDishInfo_Load(object sender, EventArgs e)
         {
@@ -62,6 +63,14 @@ namespace CaterUI
             this.cbSearchType.ValueMember = "DTId";
         }
 
+        public static FormDishInfo Create()
+        {
+            if (_form == null)
+            {
+                _form = new FormDishInfo();
+            }
+            return _form;
+        }
         private void txtSearchTitle_Leave(object sender, EventArgs e)
         {
             LoadList();
@@ -173,6 +182,11 @@ namespace CaterUI
             {
                 LoadTypeList();
             }
+        }
+
+        private void FormDishInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _form = null;
         }
     }
 }

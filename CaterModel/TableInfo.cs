@@ -13,5 +13,7 @@ namespace CaterModel
         public int THallId { get; set; }
         public string THallTitle { get; set; }
         public bool TIsFree { get; set; }
+        public int TOrderId { get; set; }
+        public OrderType TOrderType { get; set; }
     }
 }

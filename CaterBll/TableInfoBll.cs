@@ -17,19 +17,24 @@ namespace CaterBll
             return tiDal.GetList(para);
         }
 
-        public bool Add(TableInfo di)
+        public bool Add(TableInfo ti)
         {
-            return tiDal.Insert(di) > 0;
+            return tiDal.Insert(ti) > 0;
         }
 
-        public bool Edit(TableInfo di)
+        public bool Edit(TableInfo ti)
         {
-            return tiDal.Update(di) > 0;
+            return tiDal.Update(ti) > 0;
         }
 
         public bool Remove(int id)
         {
             return tiDal.Delete(id) > 0;
+        }
+
+        public bool ChangeState(int tableId)
+        {
+            return tiDal.ChangeState(tableId) > 0;
         }
     }
 }

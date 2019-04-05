@@ -40,6 +40,13 @@ namespace CaterDal
             return list;
         }
 
+        public int ChangeState(int tableId)
+        {
+            string SqlText = "update TableInfo set TIsFree = ~TIsFree where TId = @TId";
+            SqlParameter para = new SqlParameter("@TId", tableId);
+            return SqlHelper.ExecuteNonQuery(connStr, SqlText, para);
+        }
+
         public int Insert(TableInfo ti)
         {
             string sqlText = "insert into TableInfo([TTitle], [THallId], [TIsFree]) values (@TTitle, @THallId, @TIsFree)";

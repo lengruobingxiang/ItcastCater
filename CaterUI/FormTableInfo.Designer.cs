@@ -43,13 +43,13 @@
             this.txtTId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbSearchFree = new System.Windows.Forms.ComboBox();
             this.cbSearchHall = new System.Windows.Forms.ComboBox();
             this.btnSearchAll = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvTableInfo = new System.Windows.Forms.DataGridView();
-            this.cbSearchFree = new System.Windows.Forms.ComboBox();
             this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THallTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -220,6 +220,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "搜索";
             // 
+            // cbSearchFree
+            // 
+            this.cbSearchFree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchFree.FormattingEnabled = true;
+            this.cbSearchFree.Location = new System.Drawing.Point(71, 59);
+            this.cbSearchFree.Name = "cbSearchFree";
+            this.cbSearchFree.Size = new System.Drawing.Size(142, 20);
+            this.cbSearchFree.TabIndex = 7;
+            this.cbSearchFree.SelectedIndexChanged += new System.EventHandler(this.cbSearchFree_SelectedIndexChanged);
+            // 
             // cbSearchHall
             // 
             this.cbSearchHall.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -294,16 +304,6 @@
             this.dgvTableInfo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTableInfo_CellDoubleClick);
             this.dgvTableInfo.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTableInfo_CellFormatting);
             // 
-            // cbSearchFree
-            // 
-            this.cbSearchFree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearchFree.FormattingEnabled = true;
-            this.cbSearchFree.Location = new System.Drawing.Point(71, 59);
-            this.cbSearchFree.Name = "cbSearchFree";
-            this.cbSearchFree.Size = new System.Drawing.Size(142, 20);
-            this.cbSearchFree.TabIndex = 7;
-            this.cbSearchFree.SelectedIndexChanged += new System.EventHandler(this.cbSearchFree_SelectedIndexChanged);
-            // 
             // TId
             // 
             this.TId.DataPropertyName = "TId";
@@ -342,6 +342,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormTableInfo";
             this.Text = "餐桌管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTableInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormTableInfo_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -351,6 +351,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDishInfo";
             this.Text = "菜单管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDishInfo_FormClosed);
             this.Load += new System.EventHandler(this.FormDishInfo_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

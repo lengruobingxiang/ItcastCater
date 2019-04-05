@@ -47,6 +47,8 @@
     <Compile Include="ManagerInfoBll.cs" />
     <Compile Include="MemberInfoBll.cs" />
     <Compile Include="MemberTypeInfoBll.cs" />
+    <Compile Include="OrderDishBll.cs" />
+    <Compile Include="OrderInfoBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableInfoBll.cs" />
   </ItemGroup>

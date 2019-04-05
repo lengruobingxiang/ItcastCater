@@ -15,12 +15,15 @@ namespace CaterUI
 {
     public partial class FormTableInfo : Form
     {
-        public FormTableInfo()
+        private FormTableInfo()
         {
             InitializeComponent();
         }
 
         TableInfoBll tiBll = new TableInfoBll();
+        static FormTableInfo _form = null;
+
+        public event Action TableChanged;
 
         private void FormTableInfo_Load(object sender, EventArgs e)
         {
@@ -96,6 +99,7 @@ namespace CaterUI
                     cbTHall.SelectedIndex = -1;
                     rbFree.Checked = true;
                     LoadList();
+                    TableChanged();
                 }
                 else
                 {
@@ -114,12 +118,22 @@ namespace CaterUI
                     rbFree.Checked = true;
                     btnAdd.Text = "添加";
                     LoadList();
+                    TableChanged();
                 }
                 else
                 {
                     MessageBox.Show("修改失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        public static FormTableInfo Create()
+        {
+            if (_form == null)
+            {
+                _form = new FormTableInfo();
+            }
+            return _form;
         }
 
         private void dgvTableInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -154,6 +168,7 @@ namespace CaterUI
             {
                 MessageBox.Show("删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
                 LoadList();
+                TableChanged();
             }
         }
 
@@ -163,6 +178,7 @@ namespace CaterUI
             if (hi.ShowDialog() == DialogResult.OK)
             {
                 LoadHallList();
+                TableChanged();
             }
         }
 
@@ -172,6 +188,11 @@ namespace CaterUI
             {
                 e.Value = ToBoolean(e.Value) ? "空闲" : "使用中";
             }
+        }
+
+        private void FormTableInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _form = null;
         }
     }
 }
