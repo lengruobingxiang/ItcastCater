@@ -150,5 +150,25 @@ namespace CaterUI
             di.Show();
             di.Focus();
         }
+
+        private void MenuOrder_Click(object sender, EventArgs e)
+        {
+            TabPage tb = tcHallInfo.SelectedTab;
+            ListView lv = tb.Controls[0] as ListView;
+            ListViewItem table = lv.SelectedItems[0];
+            TableInfo ti = table.Tag as TableInfo;
+            if (ti.TIsFree)
+            {
+                MessageBox.Show("该餐桌为空闲状态，无需结账！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                FormOrderPay formOrderPay = new FormOrderPay();
+                formOrderPay.Tag = table.Tag;
+                formOrderPay.FormRefresh += LoadHallInfo;
+                formOrderPay.ShowDialog();
+            }
+        }
     }
 }

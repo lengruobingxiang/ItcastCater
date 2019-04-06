@@ -14,5 +14,6 @@ namespace CaterModel
         public string MbPhone { get; set; }
         public decimal MbMoney { get; set; }
         public string MbTypeTitle { get; set; }
+        public decimal MbDiscount { get; set; }
     }
 }

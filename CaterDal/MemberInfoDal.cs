@@ -16,7 +16,7 @@ namespace CaterDal
 
         public List<MemberInfo> GetList(Dictionary<string, string> dic)
         {
-            string sqlText = "select mi.*, mti.MTTitle as MbTypeTitle from MemberInfo as mi inner join MemberTypeInfo as mti on mi.MbTypeId = mti.MTId where mi.MbDelFlag = 0";
+            string sqlText = "select mi.*, mti.MTTitle as MbTypeTitle, mti.MTDiscount as MbDiscount from MemberInfo as mi inner join MemberTypeInfo as mti on mi.MbTypeId = mti.MTId where mi.MbDelFlag = 0";
             if (dic.Count > 0)
             {
                 foreach (KeyValuePair<string, string> pair in dic)
@@ -35,7 +35,8 @@ namespace CaterDal
                     MbName = row["MbName"].ToString(),
                     MbPhone = row["MbPhone"].ToString(),
                     MbMoney = ToDecimal(row["MbMoney"]),
-                    MbTypeTitle = row["MbTypeTitle"].ToString()
+                    MbTypeTitle = row["MbTypeTitle"].ToString(),
+                    MbDiscount = ToDecimal(row["MbDiscount"])
                 });
             }
             return list;

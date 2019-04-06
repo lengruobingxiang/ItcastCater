@@ -90,6 +90,7 @@
             this.MenuOrder.Name = "MenuOrder";
             this.MenuOrder.Size = new System.Drawing.Size(44, 21);
             this.MenuOrder.Text = "结账";
+            this.MenuOrder.Click += new System.EventHandler(this.MenuOrder_Click);
             // 
             // MenuQuit
             // 

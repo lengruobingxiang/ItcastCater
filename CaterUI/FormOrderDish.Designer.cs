@@ -78,7 +78,6 @@
             this.dgvDishInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDishInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDishInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDishInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DId,
@@ -102,6 +101,7 @@
             this.DId.HeaderText = "编号";
             this.DId.Name = "DId";
             this.DId.ReadOnly = true;
+            this.DId.Width = 84;
             // 
             // DTitle
             // 
@@ -109,6 +109,7 @@
             this.DTitle.HeaderText = "名称";
             this.DTitle.Name = "DTitle";
             this.DTitle.ReadOnly = true;
+            this.DTitle.Width = 83;
             // 
             // DPinyin
             // 
@@ -116,6 +117,7 @@
             this.DPinyin.HeaderText = "首字母";
             this.DPinyin.Name = "DPinyin";
             this.DPinyin.ReadOnly = true;
+            this.DPinyin.Width = 84;
             // 
             // DTypeTitle
             // 
@@ -123,6 +125,7 @@
             this.DTypeTitle.HeaderText = "分类";
             this.DTypeTitle.Name = "DTypeTitle";
             this.DTypeTitle.ReadOnly = true;
+            this.DTypeTitle.Width = 83;
             // 
             // DPrice
             // 
@@ -130,6 +133,7 @@
             this.DPrice.HeaderText = "价格";
             this.DPrice.Name = "DPrice";
             this.DPrice.ReadOnly = true;
+            this.DPrice.Width = 84;
             // 
             // panel1
             // 
@@ -198,7 +202,6 @@
             this.dgvOrderDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvOrderDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ODDishId,
@@ -221,6 +224,7 @@
             this.ODDishId.HeaderText = "菜品编号";
             this.ODDishId.Name = "ODDishId";
             this.ODDishId.ReadOnly = true;
+            this.ODDishId.Width = 84;
             // 
             // ODDishTitle
             // 
@@ -228,6 +232,7 @@
             this.ODDishTitle.HeaderText = "菜品名称";
             this.ODDishTitle.Name = "ODDishTitle";
             this.ODDishTitle.ReadOnly = true;
+            this.ODDishTitle.Width = 83;
             // 
             // ODSinglePrice
             // 
@@ -235,6 +240,7 @@
             this.ODSinglePrice.HeaderText = "单价";
             this.ODSinglePrice.Name = "ODSinglePrice";
             this.ODSinglePrice.ReadOnly = true;
+            this.ODSinglePrice.Width = 84;
             // 
             // ODCount
             // 
@@ -242,6 +248,7 @@
             this.ODCount.HeaderText = "数量";
             this.ODCount.Name = "ODCount";
             this.ODCount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ODCount.Width = 83;
             // 
             // ODTotalPrice
             // 
@@ -249,6 +256,7 @@
             this.ODTotalPrice.HeaderText = "总价";
             this.ODTotalPrice.Name = "ODTotalPrice";
             this.ODTotalPrice.ReadOnly = true;
+            this.ODTotalPrice.Width = 84;
             // 
             // panel2
             // 

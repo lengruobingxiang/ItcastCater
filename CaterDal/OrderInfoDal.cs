@@ -14,18 +14,18 @@ namespace CaterDal
     {
         string connStr = SqlHelper.GetConnectionString("ItcastCater");
 
-        public OrderInfo GetOrder(int tableId)
+        public OrderInfo GetOrder(int orderId)
         {
             OrderInfo oi = null;
-            string sqlText = "select * from OrderInfo where ODelFlag = 0 and OId = @OId";
-            SqlParameter para = new SqlParameter("@OId", tableId);
+            string sqlText = "select * from OrderInfo where ODelFlag = 0 and OId = @OId and OIsPay = 0";
+            SqlParameter para = new SqlParameter("@OId", orderId);
             DataTable dt = SqlHelper.ExecuteDataTable(connStr, sqlText, para);
             foreach (DataRow row in dt.Rows)
             {
                 oi = new OrderInfo()
                 {
                     Oid = ToInt32(row["Oid"]),
-                    OMemberId = ToInt32(row["OMemberId"]),
+                    OMemberId = row["OMemberId"] == Convert.DBNull ? 0 : ToInt32(row["OMemberId"]),
                     ODate = ToDateTime(row["ODate"]),
                     OMoney = ToDecimal(row["OMoney"]),
                     OIsPay = ToBoolean(row["OIsPay"]),

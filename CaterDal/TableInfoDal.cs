@@ -16,7 +16,7 @@ namespace CaterDal
 
         public List<TableInfo> GetList(Dictionary<string, string> para)
         {
-            string sqlText = "select ti.*, hi.HTitle as THallTitle from TableInfo as ti inner join HallInfo as hi on ti.THallId = hi.HId where ti.TDelFlag = 0";
+            string sqlText = "select ti.*, hi.HTitle as THallTitle, oi.OId as TOrderId from TableInfo as ti inner join HallInfo as hi on ti.THallId = hi.HId left join OrderInfo as oi on ti.TId = oi.OTableId and OIsPay = 0 where ti.TDelFlag = 0";
             if (para.Count > 0)
             {
                 foreach (var pair in para)
@@ -34,7 +34,8 @@ namespace CaterDal
                     TTitle = row["TTitle"].ToString(),
                     THallId = ToInt32(row["THallId"]),
                     THallTitle = row["THallTitle"].ToString(),
-                    TIsFree = ToBoolean(row["TIsFree"])
+                    TIsFree = ToBoolean(row["TIsFree"]),
+                    TOrderId = row["TOrderId"] == Convert.DBNull ? 0 : ToInt32(row["TOrderId"])
                 });
             }
             return list;

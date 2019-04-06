@@ -1,4 +1,5 @@
 ﻿using CaterDal;
+using CaterModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace CaterBll
         public bool SetOrderMoney(int id, decimal money)
         {
             return oiDal.SetOrderMoney(id, money) > 0;
+        }
+
+        public OrderInfo GetOrder(int orderId)
+        {
+            return oiDal.GetOrder(orderId);
         }
     }
 }
